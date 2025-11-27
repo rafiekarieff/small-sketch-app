@@ -169,8 +169,8 @@ function setCanvasCursor(tool) {
     offscreen.getContext("2d").drawImage(img, 0, 0, width, height);
     const angle = 25 * Math.PI / 180;
     const cursorURL = offscreen.toDataURL("image/png");
-    const hotspotX = Math.min(width - 1, Math.max(0, meta.hotspotX));
-    const hotspotY = Math.min(height - 1, Math.max(0, meta.hotspotY));
+    const hotspotX = Math.min(width - 7.3, Math.max(0, meta.hotspotX));
+    const hotspotY = Math.min(height - 0, Math.max(0, meta.hotspotY));
     const cursorValue = `url(${cursorURL}) ${hotspotX} ${hotspotY}, crosshair`;
     cursorCache.set(tool, cursorValue);
     canvas.style.cursor = cursorValue;
