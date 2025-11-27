@@ -278,8 +278,8 @@ button {
 
 .logo-chip {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -288,20 +288,19 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(14px);
   overflow: hidden;
 }
 
 .logo-chip img {
-  width: 82px;
-  height: 82px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .control-strip {
   position: absolute;
-  bottom: 28px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -311,7 +310,7 @@ button {
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(22, 13, 49, 0.08);
-  z-index: 10;
+  z-index: 20;
   min-width: 320px;
 }
 
