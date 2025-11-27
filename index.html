@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Small Sketch App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="surface">
+      <img src="assets/background.png" alt="" class="bg-texture" aria-hidden="true" />
+      <div class="app-shell">
+        <main class="canvas-stage" aria-label="Drawing stage">
+          <div class="logo-chip">
+            <img src="assets/reference.png" alt="Sketchboard logo" />
+          </div>
+          <div class="page-stack" id="page-stack">
+            <canvas id="sketch-canvas" width="1600" height="2200"></canvas>
+          </div>
+          <section class="control-strip" id="control-strip" aria-label="Drawing controls">
+            <button class="strip-handle" id="strip-handle" aria-label="Drag controls" type="button">
+              <span></span>
+            </button>
+            <div class="panel-section compact">
+              <label class="section-label" for="color-picker">Stroke</label>
+              <div class="input-chip color-chip">
+                <input type="color" id="color-picker" value="#151515" />
+                <span id="color-value">#151515</span>
+              </div>
+            </div>
+            <div class="panel-section compact">
+              <label class="section-label" for="size-slider">Size</label>
+              <div class="slider-field">
+                <input
+                  type="range"
+                  id="size-slider"
+                  min="2"
+                  max="48"
+                  step="1"
+                  value="10"
+                  aria-valuetext="10px stroke width"
+                />
+                <span class="slider-value" id="size-value">10 px</span>
+              </div>
+            </div>
+            <div class="panel-section compact">
+              <label class="section-label">Toolkit</label>
+              <div class="tool-buttons" role="radiogroup">
+                <button class="tool-toggle is-active" data-tool="pencil" aria-pressed="true">
+                  Pencil
+                </button>
+                <button class="tool-toggle" data-tool="eraser" aria-pressed="false">
+                  Leaf
+                </button>
+              </div>
+            </div>
+            <div class="panel-section compact menu-wrapper">
+              <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                type="button"
+              >
+                <span class="menu-icon"></span>
+              </button>
+              <div class="menu-dropdown" id="menu-dropdown" role="menu" aria-hidden="true">
+                <button id="clear-canvas" class="ghost-btn" role="menuitem">Clear</button>
+                <button id="save-png" class="primary-btn" role="menuitem">Save</button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
