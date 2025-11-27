@@ -50,8 +50,8 @@ button {
 
 .surface {
   position: absolute;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +78,7 @@ button {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(18px);
-  background: linear-gradient(130deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78));
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.78));
   border-radius: 40px;
 }
 
@@ -256,8 +256,8 @@ button {
 
 .page-stack {
   position: relative;
-  width: clamp(420px, 60vw, 620px);
-  aspect-ratio: 3 / 3;
+  width: clamp(500px, 60vw, 500px);
+  aspect-ratio: 1 / 1;
   touch-action: none;
   display: flex;
   justify-content: center;
