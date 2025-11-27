@@ -78,8 +78,7 @@ function renderStroke(tool) {
   ctx.globalCompositeOperation = tool === "eraser" ? "destination-out" : "source-over";
   ctx.strokeStyle = state.strokeColor;
   ctx.fillStyle = tool === "eraser" ? "rgba(255,255,255,0.9)" : state.strokeColor;
-  ctx.shadowBlur = tool === "eraser" ? state.strokeSize * 0.8 : 0;
-  ctx.shadowColor = tool === "eraser" ? "rgba(0,0,0,0.25)" : "transparent";
+ 
 
   if (points.length === 1) {
     const p = points[0];
@@ -168,6 +167,7 @@ function setCanvasCursor(tool) {
     offscreen.width = width;
     offscreen.height = height;
     offscreen.getContext("2d").drawImage(img, 0, 0, width, height);
+    const angle = 25 * Math.PI / 180;
     const cursorURL = offscreen.toDataURL("image/png");
     const hotspotX = Math.min(width - 1, Math.max(0, meta.hotspotX));
     const hotspotY = Math.min(height - 1, Math.max(0, meta.hotspotY));
@@ -214,8 +214,11 @@ sizeSlider.addEventListener("input", (evt) => {
 });
 
 clearButton.addEventListener("click", () => {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform before clearing
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.scale(state.dpr, state.dpr); // Reapply scaling
 });
+
 
 function downloadPNG() {
   const stackRect = pageStack.getBoundingClientRect();
